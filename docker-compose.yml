@@ -11,11 +11,8 @@ services:
   
   postgres:
     image: postgres
-    environment: 
-    - POSTGRES_PASSWORD=ojs
-    - POSTGRES_USER = ojs
-    - POSTGRES_DB = ojs
-
+    volumes:
+      - /postgres/:/docker-entrypoint-initdb.d/
     ports:
       - "5432:5432"
     networks: 
