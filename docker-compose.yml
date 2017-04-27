@@ -9,4 +9,7 @@ services:
       - docker_ojs
     restart: unless-stopped
 
-    
+
+networks:
+  docker_ojs:
+    driver: bridge
