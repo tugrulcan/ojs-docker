@@ -8,7 +8,19 @@ services:
     networks:
       - docker_ojs
     restart: unless-stopped
+  
+  postgres:
+    image: postgres
+    environment: 
+    - POSTGRES_PASSWORD=ojs
+    - POSTGRES_USER = ojs
+    - POSTGRES_DB = ojs
 
+    ports:
+      - "5432:5432"
+    networks: 
+      - docker_ojs
+    restart: unless-stopped
 
 networks:
   docker_ojs:
