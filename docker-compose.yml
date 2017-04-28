@@ -10,9 +10,7 @@ services:
     restart: unless-stopped
   
   postgres:
-    image: postgres
-    volumes:
-      - /postgres/:/docker-entrypoint-initdb.d/
+    build: ./postgres
     ports:
       - "5432:5432"
     networks: 
