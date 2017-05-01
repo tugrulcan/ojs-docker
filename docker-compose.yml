@@ -16,7 +16,13 @@ services:
     networks: 
       - docker_ojs
     restart: unless-stopped
-
+  
+  php:
+    build: ./php
+    networks: 
+      - docker_ojs
+    restart: unless-stopped
+  
 networks:
   docker_ojs:
     driver: bridge
